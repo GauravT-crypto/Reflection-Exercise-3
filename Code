@@ -1,0 +1,74 @@
+#### Preamble ####
+# Purpose: Get data on 2021 shelter usage and make table
+# Author: Gaurav Thind
+# Email: gauravpreet.thind@mail.utoronto.ca
+# Date: 19 September 2024
+# Prerequisites: None
+
+```{r}
+library(tidyverse)
+
+data <- read_csv
+
+
+```
+
+```{r}
+#### Workspace setup ####
+
+
+library(opendatatoronto)
+library(tidyverse)
+
+package <- show_package("e2")
+
+#### Simulate data ####
+set.seed(304)
+
+#### Define the start and end date ####
+start_date <- as.Date("2018-01-01")
+end_date <- as.Date("2023-12-31")
+
+
+number_of_dates <- 100
+
+data <-
+  tibble(
+  date = as.Date(
+  runif(
+  n = number_of_dates,
+  min = as.numeric(start_date),
+  max = as.numeric(end_date)
+  ),
+  origin = "1970-01-01"
+ ),
+ number_of_marriage = rpois(n = number_of_dates, lambda = 15)
+)
+)
+)
+
+
+cleaned_data <-
+  raw_data |>
+  janitor::clean_names() |>
+  seperate(col = time_period,
+            into = c("year", "mont)
+            sep = "-") |>
+            
+
+
+
+
+
+#### Write_CSV ####
+write_csv(data, file = "data/raw_data/raw_data.csv")
+
+
+
+all(is.na)
+
+```
+
+#### References ####
+# R Core Team (2023). R: A language and environment for statistical computing. R #Foundation for Statistical Computing, Vienna, Austria. URL #https://www.R-project.org/.
+#Open Data Toronto. Marriage Licence Statistics. URL #https://open.toronto.ca/dataset/marriage-licence-statistics/.
